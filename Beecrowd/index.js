@@ -1,13 +1,28 @@
-var input = require('fs').readFileSync('CRS/Beecrowd/dev/stdin.txt', 'utf8');
+var input = require('fs').readFileSync('./dev/stdin.txt', 'utf8');
 var lines = input.split('\n');
 
 const pegarValores = (line) => line.split(" ").map(a => Number(a));
 
-let [x1, y1] = pegarValores(lines.shift());
-let [x2, y2] = pegarValores(lines.shift());
+let [a, b, c] = pegarValores(lines.shift());
+let delta= 0;
+let totalPosi = 0;
+let totalNeg = 0;
+raiz = 0;
 
-let soma1= (x2-x1)*(x2-x1)
-let soma2= (y2-y1)*(y2-y1)
-let total=  soma1+soma2
-total= Math.sqrt(total)
-console.log(`${total.toFixed(4)}`);
+delta = (b*b)-(4*a*c); 
+
+if (delta < 0) {
+    console.log("Impossivel calcular"); 
+
+
+}else{
+
+    raiz = Math.sqrt(delta);
+
+    totalPosi = (-b + raiz)/(2*a);
+    totalNeg = (-b - raiz)/(2*a);
+    console.log(`R1 = ${totalPosi.toFixed(5)}`);
+    console.log(`R2 = ${totalNeg.toFixed(5)}`);
+
+
+}
