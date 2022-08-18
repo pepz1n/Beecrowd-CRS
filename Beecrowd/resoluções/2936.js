@@ -18,3 +18,4 @@ total += a * 150
 
 console.log(total+225);
 
+  
