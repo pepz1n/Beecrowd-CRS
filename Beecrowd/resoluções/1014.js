@@ -1,11 +1,9 @@
-var input = require('fs').readFileSync('./dev/stdin.txt', 'utf8');
+var input = require('fs').readFileSync('./Beecrowd/dev/stdin.txt', 'utf8');
 var lines = input.split('\n');
 
-//const pegarValores = (line) => line.split(" ").map(a => Number(a));
+// const pegarValores = (line) => line.split(" ").map(a => Number(a));
 
-let Km = Number(lines.shift());
+let km = Number(lines.shift())
+let lts = Number(lines.shift())
 
-let distancia = Km*2
-
-
-console.log(`${distancia} minutos`)
+console.log(`${(km/lts).toFixed(3)} km/l`);
